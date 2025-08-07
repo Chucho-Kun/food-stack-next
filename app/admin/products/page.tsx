@@ -1,7 +1,9 @@
 import ProductsPagination from "@/components/products/ProductsPagination"
+import ProductsSearchForm from "@/components/products/ProductsSearchForm"
 import ProductTable from "@/components/products/ProductTable"
 import Heading from "@/components/ui/Heading"
 import { prisma } from "@/src/prisma"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 
 const productCount = async () => {
@@ -24,7 +26,7 @@ const getProducts = async ( page: number , pageSize : number ) => {
 
 export type ProductsWithCategory = Awaited<ReturnType<typeof getProducts>>
 
-export default async function ProductPage({searchParams} : { searchParams : { page: string }}) {
+export default async function ProductsPage({searchParams} : { searchParams : { page: string }}) {
 
   const page = +searchParams.page || 1
   const pageSize = 10
@@ -43,6 +45,14 @@ export default async function ProductPage({searchParams} : { searchParams : { pa
     <>
 
       <Heading>Administrar Productos</Heading>  
+
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
+        <Link
+          href={`/admin/products/new`}
+          className="bg-amber-300 w-full lg:w-auto text-xl px-10 py-3 text-center font-bold rounded hover:bg-amber-400"
+        >Crear Producto</Link>
+        <ProductsSearchForm />
+      </div>
 
       <ProductTable
         products={products}
