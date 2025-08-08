@@ -12,10 +12,7 @@ export default function ProductsPagination({ page , totalPages } : ProductsPagin
 
     const isArrowRightDisabled = page < totalPages
     const isArrowLeftDisabled = page > 1
-    console.log(page , totalPages);
-    console.log(isArrowRightDisabled);
     
-
   return (
     <nav
         className='flex justify-center py-10'
