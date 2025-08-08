@@ -13,7 +13,6 @@ export async function completeOrder(formData : FormData){
     const result = OrderIdSchema.safeParse(data)
 
     if(result.success){
-
         try {
             await prisma.order.update({
                 where:{
@@ -24,11 +23,12 @@ export async function completeOrder(formData : FormData){
                     orderReadyAt: new Date(Date.now())
                 }
             })
+
+            console.log('Acualizacion realizada correctamente...');
             revalidatePath('/admin/orders')
+        
         } catch (error) {
             console.log(error);
-            
         }
     }
-
 }

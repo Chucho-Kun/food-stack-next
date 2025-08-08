@@ -27,7 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es-MX">
+      <head>
+        <link
+          rel="icon"
+          href="/favicon.png"
+          type="image/png"
+        />
+      </head>
       <body
         className={`${inter.className} bg-gray-100`}
       >

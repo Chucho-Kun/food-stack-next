@@ -44,7 +44,7 @@ export default async function ProductsPage({searchParams} : { searchParams : { p
   return (
     <>
 
-      <Heading>Administrar Productos</Heading>  
+      <Heading>Editar / Agregar Productos</Heading>  
 
       <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
         <Link
