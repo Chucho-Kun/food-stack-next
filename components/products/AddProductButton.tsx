@@ -14,7 +14,7 @@ export default function AddProductButton({ product }:AddProductButtonProps) {
   return (
     <button type="button"
         onClick={() => addToOrder(product)}  
-        className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+        className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer rounded-lg"
         >Agregar
     </button>
   )
