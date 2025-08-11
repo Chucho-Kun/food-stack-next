@@ -2,7 +2,6 @@ import ProductsSearchForm from '@/components/products/ProductsSearchForm';
 import ProductTable from '@/components/products/ProductTable';
 import Heading from '@/components/ui/Heading'
 import { prisma } from '@/src/prisma';
-import Link from 'next/link';
 import React from 'react'
 
 const searchProducts = async (searchTerm: string) => {

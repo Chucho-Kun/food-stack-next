@@ -14,13 +14,20 @@ const eslintConfig = [
 
   // 👇 Desactiva reglas solo para archivos generados por Prisma
   {
-    files: ["app/generated/prisma/runtime/*.js"],
+    files: ["app/generated/prisma/**/*.{js,ts,d.ts}"],
     rules: {
+      "no-unused-expressions": "off",
       "@typescript-eslint/no-unused-expressions": "off",
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-require-imports": "off",
-    },
-  },
+    }
+
+  }, {
+    ignores: ["app/generated/prisma/**/*"],
+  }
+
 ];
 
 export default eslintConfig;
