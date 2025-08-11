@@ -20,14 +20,14 @@ const searchProducts = async (searchTerm: string) => {
     return products
 }
 
-export default async function SearchPAge({searchParams}: {searchParams: { search : string }}) {
-  
-   const products = await searchProducts(searchParams.search);
-    
+export default async function SearchPAge({searchParams}: {searchParams: Promise< { search : string } > }) {
+
+    const { search } = await searchParams
+    const products = await searchProducts(search);
   
     return (
         <>
-            <Heading>Resultados de la Búsqueda: {searchParams.search}</Heading>
+            <Heading>Resultados de la Búsqueda: {search}</Heading>
 
             <div className="flex flex-col lg:flex-row lg:justify-end gap-5">
                 <ProductsSearchForm />

@@ -18,11 +18,10 @@ async function getProductById( id : number ) {
     return product
 }
 
-export default async function EditProductsPage({ params }:{ params : { id : string }}) {
+export default async function EditProductsPage({ params }: { params: Promise<{ id: string }> }) {
 
-    const product = await getProductById( +params.id )
-    console.log(product);
-    
+    const { id } = await params
+    const product = await getProductById( +id )
 
   return (
     <>

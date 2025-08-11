@@ -1,5 +1,4 @@
 import { prisma } from "@/src/prisma"
-import { categories } from '../../prisma/data/categories';
 import ImageUpload from "./ImageUpload";
 import { Product } from "@/generated/prisma";
 

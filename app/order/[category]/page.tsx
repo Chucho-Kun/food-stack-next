@@ -1,7 +1,5 @@
 import ProductCard from "@/components/products/ProductCard";
-import { products } from "@/prisma/data/products";
 import { prisma } from "@/src/prisma";
-import { categories } from '../../../prisma/data/categories';
 import Heading from "@/components/ui/Heading";
 
 
@@ -16,9 +14,9 @@ async function getProducts(category: string){
   return products
 }
 
-export default async function OrderPage(props: { params: { category: string } }) {
-  const { params } = props;
-  const products = await getProducts(params.category);
+export default async function OrderPage({ params }: { params: Promise< { category: string } > }) {
+  const { category } = await params;
+  const products = await getProducts(category);
 
   return (
     <>

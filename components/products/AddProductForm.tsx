@@ -1,6 +1,4 @@
 "use client"
-import { ProductSchema } from "@/src/schemas";
-import ProductForm from "./ProductForm";
 import { toast } from "react-toastify";
 import { createProduct } from "@/actions/create-product-action";
 import { useRouter } from "next/navigation";
