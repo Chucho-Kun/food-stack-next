@@ -4,19 +4,19 @@ Platform: menu - prepared food orders user/administrator for food establishment 
 <img width="972" height="706" alt="Captura de Pantalla 2025-08-08 a la(s) 16 58 51" src="https://github.com/user-attachments/assets/76e413de-4159-4ef2-9572-e14dc9fb4992" />
 <img width="963" height="776" alt="Captura de Pantalla 2025-08-08 a la(s) 17 00 01" src="https://github.com/user-attachments/assets/49a7b634-018d-487f-81f9-6aa5e7069bb4" />
 <img width="1315" height="833" alt="Captura de Pantalla 2025-08-08 a la(s) 17 05 20" src="https://github.com/user-attachments/assets/7ae0bff4-3956-49e0-9a99-5bdf8a65e2e7" />
+### List of URL of the platform
+#### Manager:
+#### Orders: https://food-stack-next.vercel.app/admin/orders
+#### Products: https://food-stack-next.vercel.app/admin/products
 
-### Manager:
-#### Orders https://food-stack-next.vercel.app/admin/orders
-#### Products https://food-stack-next.vercel.app/admin/products
-
-### User:
+#### User:
 #### Menu: https://food-stack-next.vercel.app/
-#### Orders: listas https://food-stack-next.vercel.app/orders
+#### Order Lists: https://food-stack-next.vercel.app/orders
 
 ## Technologies
 Next + React + Typescript + TailwindCSS + Zod + Zustand + Prisma + Cloudinary
 ## Developer Notes
-## Deploy on Vercel.app https://food-stack-next.vercel.app/
+### Deploy on Vercel.app https://food-stack-next.vercel.app/
 
 ### Configuring the eslint.config.mjs file to avoid errors that block project builds
 #### eslint.config.mjs
