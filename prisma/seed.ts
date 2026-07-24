@@ -1,9 +1,14 @@
-import { PrismaClient } from '../generated/prisma';
+process.loadEnvFile();
+
+import { PrismaClient } from '../generated/prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 import { categories } from './data/categories';
 import { products } from "./data/products";
 import colors from "colors"
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }),
+});
 
 async function main() {
     try {
@@ -12,9 +17,11 @@ async function main() {
         })
         await prisma.product.createMany({
             data:products
-        })
+        });
+        console.log(colors.bgGreen.white.bold("Seed ejecutado correctamente"));
     } catch (error) {
         console.log( colors.bgRed.white.bold(`Error desde Prisma: ${error}`));
+        throw error;
     }
 }
 

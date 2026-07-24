@@ -1,5 +1,4 @@
-import { Order, Product } from "@/generated/prisma";
-import { OrderProducts } from '../../generated/prisma/index';
+import { Order, Product, OrderProducts } from "@/generated/prisma/client";
 
 
 
